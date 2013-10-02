@@ -28,7 +28,8 @@ When it boots up and the configuration steps are terminated, login into the VM i
     
 Now you can run SARA-Coffee as shown: 
 
-	 $ t_coffee 
+     $ cd sara_coffee_package/
+	 $ ./sara_coffee.sh <input file> <output file> 
 
 
 When finished, stop the VM using the command `vagrant halt` or `vagrant destroy`, depending if you
@@ -44,7 +45,7 @@ Dependencies
 * [Numpy](http://www.numpy.org/)
 * [Biopython](http://biopython.org/)
 * Perl
-* Python
+* Python 2.7
 
 
 Links
