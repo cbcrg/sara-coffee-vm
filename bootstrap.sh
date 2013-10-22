@@ -8,19 +8,10 @@ install() {
   # Install missing packages 
   # 
   sudo apt-get update --fix-missing
-  sudo apt-get install -y wget nano curl ncbi-blast+
+  sudo apt-get install -y wget nano curl unzip
 
   sudo apt-get install -y python-numpy
   sudo apt-get install -y python-biopython
-  sudo apt-get install -y probalign
-  
-  # Downgrade Python 2.7 to Python 2.6
-  #sudo apt-get install -y python-software-properties
-  #sudo add-apt-repository ppa:fkrull/deadsnakes -y
-  #sudo apt-get update -y 
-  #sudo apt-get install -y python2.6 python2.6-dev
-  #sudo rm -rf /usr/bin/python
-  #sudo ln -s /usr/bin/python2.6 /usr/bin/python
   
   #
   # Install T-Coffee 
@@ -30,6 +21,12 @@ install() {
   chmod +x $tcoffee
   $tcoffee --mode unattended --user_email tcoffee.msa@gmail.com
   rm -rf tcoffee.org
+  
+  # Download PDB structure list
+  mkdir -p ~/.t_coffee/cache
+  cd ~/.t_coffee/cache
+  wget -q ftp://ftp.wwpdb.org/pub/pdb/derived_data/pdb_entry_type.txt 
+  cd -
   
   #
   # Install X3DNA -- http://x3dna.org/
@@ -42,11 +39,14 @@ install() {
   #
   # Install SARA  -- http://structure.biofold.org/sara/
   #  
-  wget -q http://structure.uib.es/sara/pages/versions/sara-1.0.7.tar.gz
-  tar xvf sara-1.0.7.tar.gz 
+  wget -q http://www.tcoffee.org/Packages/Archive/sara-1.0.7_patched.zip
+  unzip -q sara-1.0.7_patched.zip
   sed -i "s@^x3dna=.*@x3dna=$HOME/X3DNA/bin/find_pair@" ~/sara-1.0.7/Tools/ENVIRON 
   printf 'export PATH=$HOME/sara-1.0.7:$PATH\n' >> ~/.profile 
+  printf 'export PATH=$HOME/sara-1.0.7/Utils/:$PATH\n' >> ~/.profile
+  chmod +x $HOME/sara-1.0.7/Utils/*.py
   rm -rf sara-1.0.7.tar.gz 
+
   
   # Append T-coffee plugins to PATH
   printf 'export PATH=$DIR_4_TCOFFEE/plugins/linux:$PATH\n' >> ~/.profile 
