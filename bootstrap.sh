@@ -16,8 +16,8 @@ install() {
   #
   # Install T-Coffee 
   # 
-  wget -q -r -l1 --no-parent -A "T-COFFEE_installer*_linux_x64.bin" http://tcoffee.org/Packages/Beta/Latest/linux/
-  tcoffee=`ls tcoffee.org/Packages/Beta/Latest/linux/*.bin`
+  wget -q -r -l1 --no-parent -A "T-COFFEE_installer*_linux_x64.bin" http://tcoffee.org/Packages/Stable/Latest/linux/
+  tcoffee=`ls tcoffee.org/Packages/Stable/Latest/linux/*.bin`
   chmod +x $tcoffee
   $tcoffee --mode unattended --user_email tcoffee.msa@gmail.com
   rm -rf tcoffee.org
