@@ -51,5 +51,6 @@ Dependencies
 Links
 -----
 * [Using tertiary structure for the computation of highly accurate multiple RNA alignments with the SARA-Coffee package](http://www.ncbi.nlm.nih.gov/pubmed?term=23449094)
+* http://tcoffee.crg.cat/apps/tcoffee/do:saracoffee
 * http://www.tcoffee.org/Projects/saracoffee/
 
