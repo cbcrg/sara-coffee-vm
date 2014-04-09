@@ -21,6 +21,7 @@ Clone the sara-coffee virtual machine (this project) in a convenient location
     $ git clone https://github.com/cbcrg/sara-coffee-vm.git
 
 Enter the `sara-coffee-vm` folder and launch vagrant:
+    
     $ cd sara-coffee-vm/
     $  vagrant up  
 
