@@ -22,7 +22,7 @@ Clone the sara-coffee virtual machine (this project) in a convenient location
 
 Enter the `sara-coffee-vm` folder and launch vagrant:
     $ cd sara-coffee-vm/
-    $ vagrant up 
+    $ vagrant up  
 
 The first time you run it, it will automatically download the virtual machine and all the packages required by SARA-Coffee. It may take some minutes to complete, so be patient. 
 
