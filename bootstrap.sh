@@ -33,7 +33,9 @@ install() {
   # 
   wget -q http://www.tcoffee.org/Packages/Archive/X3DNA/Linux_x86-64_X3DNA_v2.0.tar.gz
   tar xf Linux_x86-64_X3DNA_v2.0.tar.gz
-  printf '\nexport PATH=$HOME/X3DNA/bin:$PATH\n' >> .profile 
+  printf '\n' >> .profile 
+  printf 'export X3DNA=$HOME/X3DNA\n' >> .profile 
+  printf 'export PATH=$X3DNA/bin:$PATH\n' >> .profile 
   rm -rf Linux_x86-64_X3DNA_v2.0.tar.gz
 
   #
@@ -44,8 +46,11 @@ install() {
   sed -i "s@^x3dna=.*@x3dna=$HOME/X3DNA/bin/find_pair@" ~/sara-1.0.7/Tools/ENVIRON 
   printf 'export PATH=$HOME/sara-1.0.7:$PATH\n' >> ~/.profile 
   printf 'export PATH=$HOME/sara-1.0.7/Utils/:$PATH\n' >> ~/.profile
+  # copy sara patch 
+  cp /vagrant/out3dna.py $HOME/sara-1.0.7/Utils/
   chmod +x $HOME/sara-1.0.7/Utils/*.py
   rm -rf sara-1.0.7.tar.gz 
+  
 
   
   # Append T-coffee plugins to PATH
