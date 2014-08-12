@@ -49,7 +49,7 @@ install() {
   # copy sara patch 
   cp /vagrant/out3dna.py $HOME/sara-1.0.7/Utils/
   chmod +x $HOME/sara-1.0.7/Utils/*.py
-  rm -rf sara-1.0.7.tar.gz 
+  rm -rf sara-1.0.7_patched.zip 
   
 
   
