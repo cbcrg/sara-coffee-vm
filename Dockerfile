@@ -17,9 +17,10 @@ RUN apt-get update --fix-missing; \
 #
 # Download T-Coffee
 #
-RUN wget -q http://www.tcoffee.org/Packages/Archive/tcoffee-Version_10.00.r1613.tar.gz; \
-  tar xf tcoffee-Version_10.00.r1613.tar.gz -C $HOME; \
-  rm tcoffee-Version_10.00.r1613.tar.gz; 
+RUN wget -q http://tcoffee.org/Packages/Stable/Version_11.00.8cbe486/linux/T-COFFEE_installer_Version_11.00.8cbe486_linux_x64.tar.gz; \
+  tar xf T-COFFEE_installer_Version_11.00.8cbe486_linux_x64.tar.gz -C $HOME; \
+  mv $HOME/T-COFFEE_installer_Version_11.00.8cbe486_linux_x64 $HOME/tcoffee; \
+  rm T-COFFEE_installer_Version_11.00.8cbe486_linux_x64.tar.gz; 
 
 #
 # Download PDB entries file
@@ -30,9 +31,10 @@ RUN mkdir -p $HOME/tcoffee/cache; \
 #
 # Install X3DNA
 #
-RUN wget -q http://www.tcoffee.org/Packages/Archive/X3DNA/Linux_x86-64_X3DNA_v2.0.tar.gz; \
-  tar xf Linux_x86-64_X3DNA_v2.0.tar.gz -C $HOME; \
-  rm Linux_x86-64_X3DNA_v2.0.tar.gz
+RUN wget -q http://www.tcoffee.org/Packages/Archive/X3DNA/x3dna-v2.1-linux-64bit.tar.gz; \
+  tar xf x3dna-v2.1-linux-64bit.tar.gz -C $HOME; \
+  mv $HOME/x3dna-v2.1 $HOME/X3DNA; \
+  rm x3dna-v2.1-linux-64bit.tar.gz
 
 #
 # Installa SARA package
