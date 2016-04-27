@@ -41,17 +41,22 @@ The folder '/vagrant/' is shared between the Sara-Coffee virtual and your local 
 When finished, stop the VM using the command `vagrant halt` or `vagrant destroy`, depending if you
 want to temporary stop the execution or delete permanently the VM with all its files. 
 
-Docker images
---------------
+Docker image
+------------
 
-SARA-Coffee is also distributed as a [Docker](docker.io) container. This will allow you to run it without having to
+SARA-Coffee is also distributed as a [Docker](http://docker.com) container. This will allow you to run it without having to
 install and configure each single dependency packages. 
 
 If you have Docker installed simply pull the SARA-Coffee container by using the command: 
 
     docker pull cbcrg/saracoffee
 
+To run SARA-Coffee use the following command line: 
 
+    docker run -v $PWD:$PWD -w $PWD cbcrg/saracoffee <input> <output>
+
+Note: this command assumes your input file is located in the working directory. 
+If this is not the case, you will need to mount the input file path accordingly. 
 
 
 Dependencies 
